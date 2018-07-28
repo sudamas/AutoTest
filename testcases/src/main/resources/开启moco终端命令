@@ -1,0 +1,2 @@
+cd testcases/src/main/resources
+java -jar moco-runner-0.11.0-standalone.jar http -p 8899 -c userManager.json

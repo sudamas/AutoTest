@@ -1,0 +1,156 @@
+[
+  {
+    "description": "登陆接口,成功后返回cookies",
+    "request": {
+      "uri": "/v1/login",
+      "method": "post",
+      "json": {
+        "userName": "suda",
+        "password": "123"
+      }
+    },
+    "response": {
+      "cookies": {
+        "login": "true"
+      },
+      "text": "true"
+    }
+  },
+  {
+    "description": "登陆接口,失败后返回false",
+    "request": {
+      "uri": "/v1/login",
+      "method": "post",
+      "json": {
+        "userName": "mia",
+        "password": "123"
+      }
+    },
+    "response": {
+      "text": "false"
+    }
+  },
+  {
+    "description": "获取用户信息接口",
+    "request": {
+      "uri": "/v1/getUserInfo",
+      "method": "post",
+      "json": {
+        "id": "1"
+      },
+      "cookies": {
+        "login": "true"
+      }
+    },
+    "response": {
+      "json": {
+        "id": "1",
+        "userName": "suda",
+        "password": "123",
+        "age": "25",
+        "sex": "male",
+        "permission": "0",
+        "isDelete": "0"
+      }
+    }
+  },
+  {
+    "description": "获取用户列表信息接口",
+    "request": {
+      "uri": "/v1/getUserListInfo",
+      "method": "post",
+      "json": {
+        "sex": "male"
+      },
+      "cookies": {
+        "login": "true"
+      }
+    },
+    "response": {
+      "json": [
+        {
+          "id": "1",
+          "userName": "suda",
+          "password": "123",
+          "age": "25",
+          "sex": "male",
+          "permission": "0",
+          "isDelete": "0"
+        },
+        {
+          "id": "3",
+          "userName": "asa",
+          "password": "123",
+          "age": "18",
+          "sex": "male",
+          "permission": "1",
+          "isDelete": "0"
+        },
+        {
+          "id": "5",
+          "userName": "alex",
+          "password": "123",
+          "age": "30",
+          "sex": "male",
+          "permission": "1",
+          "isDelete": "0"
+        }
+      ]
+    }
+  },
+  {
+    "description": "增加用户接口",
+    "request": {
+      "uri": "/v1/addUser",
+      "method": "post",
+      "json": {
+        "userName": "zhao9",
+        "password": "zhaozhao",
+        "sex": "male",
+        "age": "35",
+        "permission": "1",
+        "isDelete": "0"
+      },
+      "cookies": {
+        "login": "true"
+      }
+    },
+    "response": {
+      "text": "true"
+    }
+  },
+  {
+    "description": "更新用户接口",
+    "request": {
+      "uri": "/v1/updateUserInfo",
+      "method": "post",
+      "json": {
+        "userId": "2",
+        "userName": "lisa",
+        "password": "456"
+      },
+      "cookies": {
+        "login": "true"
+      }
+    },
+    "response": {
+      "text": "1"
+    }
+  },
+  {
+    "description": "删除用户接口",
+    "request": {
+      "uri": "/v1/deleteUser",
+      "method": "post",
+      "json": {
+        "userId": "8"
+      },
+      "cookies": {
+        "login": "true"
+      }
+    },
+    "response": {
+      "text": "1"
+    }
+  }
+]
